@@ -108,35 +108,6 @@
       font-size: 11px;
       text-align: center;
     }
-
-    /* Ajustes para telas grandes (desktop) — aumenta a largura do currículo e a tipografia */
-    @media (min-width: 1200px) {
-      /* aumenta a largura do container principal para aproveitar telas maiores */
-      .max-w-5xl {
-        max-width: 1100px; /* antes: 64rem equivalente ao tailwind 5xl; aumentei para 1100px */
-      }
-
-      /* leve aumento da tipografia para melhorar leitura em telas grandes */
-      #app {
-        font-size: 1.0625rem; /* 17px (16 * 1.0625) — ajustável */
-      }
-
-      /* aumenta foto e destaque do nome */
-      .photo-container {
-        width: 200px;
-        height: 200px;
-        border-width: 4px;
-      }
-      h1.text-3xl {
-        font-size: 2.25rem; /* aumenta o título principal */
-      }
-
-      /* aumenta um pouco o tamanho das seções / títulos */
-      .section-title {
-        font-size: 15px;
-      }
-    }
-
     @media print {
       * {
         -webkit-print-color-adjust: exact !important;
@@ -242,7 +213,7 @@
                 3. Exemplos: "foto.jpg", "brunno.png", "profile.jpeg"
               -->
               <div class="photo-container" style="position: relative;">
-                <img id="profilePhoto" src="foto-cv.jpg" alt="Brunno Rossetti" style="display: none;" onload="this.style.display='block'; document.getElementById('photoPlaceholder').style.display='non[...]
+                <img id="profilePhoto" src="foto-cv.jpg" alt="Brunno Rossetti" style="display: none;" onload="this.style.display='block'; document.getElementById('photoPlaceholder').style.display='none';" onerror="this.style.display='none'; document.getElementById('photoPlaceholder').style.display='flex';">
                 <div id="photoPlaceholder" class="photo-placeholder" style="display: flex;">
                   Clique para adicionar foto
                 </div>
@@ -280,11 +251,11 @@
 
               <div>
                 <h3 class="section-title section-title-dark mb-3" data-pt="Idiomas" data-en="Languages">Idiomas</h3>
-                <p class="text-xs leading-relaxed" data-pt="Português (nativo) | Inglês (fluente) | Espanhol (intermediário) | Italiano (intermediário) | Grego (básico)" data-en="Portuguese (nati[...]
+                <p class="text-xs leading-relaxed" data-pt="Português (nativo) | Inglês (fluente) | Espanhol (intermediário) | Italiano (intermediário) | Grego (básico)" data-en="Portuguese (native) | English (fluent) | Spanish (intermediate) | Italian (intermediate) | Greek (basic)">Português (nativo) | Inglês (fluente) | Espanhol (intermediário) | Italiano (intermediário) | Grego (básico)</p>
               </div>
 
               <div class="pt-4 no-print">
-                <button onclick="window.print()" class="w-full bg-white text-black py-2.5 rounded font-semibold hover:bg-gray-100 transition-colors text-sm border border-black" data-pt="Imprimir / Exp[...]
+                <button onclick="window.print()" class="w-full bg-white text-black py-2.5 rounded font-semibold hover:bg-gray-100 transition-colors text-sm border border-black" data-pt="Imprimir / Exportar PDF" data-en="Print / Export PDF">Imprimir / Exportar PDF</button>
               </div>
             </div>
           </aside>
@@ -295,7 +266,7 @@
             <section class="mb-10">
               <h2 class="section-title" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
               <div class="text-sm leading-relaxed text-gray-900 space-y-3">
-                <p data-pt="Sou movido por música, pessoas e propósito. Tenho mais de 15 anos de experiência em criação e gestão de projetos musicais e audiovisuais, unindo sensibilidade artíst[...]
+                <p data-pt="Sou movido por música, pessoas e propósito. Tenho mais de 15 anos de experiência em criação e gestão de projetos musicais e audiovisuais, unindo sensibilidade artística e visão estratégica. Minha trajetória combina o olhar criativo de quem vive a música e a capacidade de estruturar processos que transformam ideias em resultados. Com escuta apurada, empatia e senso de timing, atuo conectando artistas, público e marcas de forma genuína e relevante." data-en="I am driven by music, people, and purpose. With over 15 years of experience in creating and managing musical and audiovisual projects, I combine artistic sensitivity and strategic vision. My journey combines the creative perspective of someone who lives music and the ability to structure processes that transform ideas into results. With refined listening, empathy, and a sense of timing, I work connecting artists, audiences, and brands in an authentic and relevant way.">Sou movido por música, pessoas e propósito. Tenho mais de 15 anos de experiência em criação e gestão de projetos musicais e audiovisuais, unindo sensibilidade artística e visão estratégica. Minha trajetória combina o olhar criativo de quem vive a música e a capacidade de estruturar processos que transformam ideias em resultados. Com escuta apurada, empatia e senso de timing, atuo conectando artistas, público e marcas de forma genuína e relevante.</p>
               </div>
             </section>
 
@@ -307,39 +278,39 @@
 
               <div class="space-y-8">
                 <article>
-                  <h3 class="font-semibold text-base mb-1" data-pt="Co-fundador / Head de Operações no Brasil — Songsay (Estocolmo)" data-en="Co-founder / Head of Operations in Brazil — Songsay [...]
+                  <h3 class="font-semibold text-base mb-1" data-pt="Co-fundador / Head de Operações no Brasil — Songsay (Estocolmo)" data-en="Co-founder / Head of Operations in Brazil — Songsay (Stockholm)">Co-fundador / Head de Operações no Brasil — Songsay (Estocolmo)</h3>
                   <p class="text-sm text-gray-600 mb-3">jan 2022 – set 2024</p>
-                  <p class="text-sm text-gray-900" data-pt="Co-fundador de startup que conecta artistas e fãs por meio de tecnologia e storytelling. Responsável pela liderança de times multidiscipl[...]
+                  <p class="text-sm text-gray-900" data-pt="Co-fundador de startup que conecta artistas e fãs por meio de tecnologia e storytelling. Responsável pela liderança de times multidisciplinares (tecnologia, marketing e conteúdo) e pela curadoria de talentos brasileiros. Atuação em planejamento criativo, parcerias estratégicas e análise de dados para decisões de posicionamento artístico." data-en="Co-founder of startup that connects artists and fans through technology and storytelling. Responsible for leading multidisciplinary teams (technology, marketing, and content) and curating Brazilian talent. Work in creative planning, strategic partnerships, and data analysis for artistic positioning decisions.">Co-fundador de startup que conecta artistas e fãs por meio de tecnologia e storytelling. Responsável pela liderança de times multidisciplinares (tecnologia, marketing e conteúdo) e pela curadoria de talentos brasileiros. Atuação em planejamento criativo, parcerias estratégicas e análise de dados para decisões de posicionamento artístico.</p>
                 </article>
 
                 <article>
-                  <h3 class="font-semibold text-base mb-1" data-pt="Co-fundador e Produtor — We Design Sound (Estúdio de Produção)" data-en="Co-founder and Producer — We Design Sound (Productio[...]
+                  <h3 class="font-semibold text-base mb-1" data-pt="Co-fundador e Produtor — We Design Sound (Estúdio de Produção)" data-en="Co-founder and Producer — We Design Sound (Production Studio)">Co-fundador e Produtor — We Design Sound (Estúdio de Produção)</h3>
                   <p class="text-sm text-gray-600 mb-3">jan 2019 – jan 2024</p>
-                  <p class="text-sm text-gray-900" data-pt="Criação de trilhas, sound design e produção musical para filmes, séries e campanhas. Direção artística e orientação de performance[...]
+                  <p class="text-sm text-gray-900" data-pt="Criação de trilhas, sound design e produção musical para filmes, séries e campanhas. Direção artística e orientação de performance em estúdio, integrando visão criativa e excelência técnica. Participação em projetos reconhecidos internacionalmente." data-en="Creation of soundtracks, sound design, and music production for films, series, and campaigns. Artistic direction and performance guidance in studio, integrating creative vision and technical excellence. Participation in internationally recognized projects.">Criação de trilhas, sound design e produção musical para filmes, séries e campanhas. Direção artística e orientação de performance em estúdio, integrando visão criativa e excelência técnica. Participação em projetos reconhecidos internacionalmente.</p>
                 </article>
 
                 <article>
-                  <h3 class="font-semibold text-base mb-1" data-pt="Engenheiro de Áudio — Universidade Federal de Santa Catarina (UFSC)" data-en="Audio Engineer — Federal University of Santa Cata[...]
+                  <h3 class="font-semibold text-base mb-1" data-pt="Engenheiro de Áudio — Universidade Federal de Santa Catarina (UFSC)" data-en="Audio Engineer — Federal University of Santa Catarina (UFSC)">Engenheiro de Áudio — Universidade Federal de Santa Catarina (UFSC)</h3>
                   <p class="text-sm text-gray-600 mb-3">jun 2019 – jul 2023</p>
-                  <p class="text-sm text-gray-900" data-pt="Coordenação técnica e artística de eventos musicais e culturais. Suporte a artistas e grupos independentes em gravações, performances [...]
+                  <p class="text-sm text-gray-900" data-pt="Coordenação técnica e artística de eventos musicais e culturais. Suporte a artistas e grupos independentes em gravações, performances e projetos de extensão." data-en="Technical and artistic coordination of musical and cultural events. Support for artists and independent groups in recordings, performances, and extension projects.">Coordenação técnica e artística de eventos musicais e culturais. Suporte a artistas e grupos independentes em gravações, performances e projetos de extensão.</p>
                 </article>
 
                 <article>
-                  <h3 class="font-semibold text-base mb-1" data-pt="Professor Técnico — SENAC São Paulo" data-en="Technical Instructor — SENAC São Paulo">Professor Técnico — SENAC São Paulo[...]
+                  <h3 class="font-semibold text-base mb-1" data-pt="Professor Técnico — SENAC São Paulo" data-en="Technical Instructor — SENAC São Paulo">Professor Técnico — SENAC São Paulo</h3>
                   <p class="text-sm text-gray-600 mb-3">jan 2014 – jun 2019</p>
-                  <p class="text-sm text-gray-900" data-pt="Criação e aplicação de cursos técnicos em áudio e produção musical para mais de 2.000 alunos por ano. Desenvolvimento de metodologia[...]
+                  <p class="text-sm text-gray-900" data-pt="Criação e aplicação de cursos técnicos em áudio e produção musical para mais de 2.000 alunos por ano. Desenvolvimento de metodologia prática e incentivo à autonomia criativa." data-en="Creation and delivery of technical courses in audio and music production for over 2,000 students per year. Development of practical methodology and encouragement of creative autonomy.">Criação e aplicação de cursos técnicos em áudio e produção musical para mais de 2.000 alunos por ano. Desenvolvimento de metodologia prática e incentivo à autonomia criativa.</p>
                 </article>
 
                 <article>
                   <h3 class="font-semibold text-base mb-1" data-pt="Engenheiro de Áudio — SESC São Paulo" data-en="Audio Engineer — SESC São Paulo">Engenheiro de Áudio — SESC São Paulo</h3>
                   <p class="text-sm text-gray-600 mb-3">2012 – 2014</p>
-                  <p class="text-sm text-gray-900" data-pt="Operação de som em shows e espetáculos, com foco em qualidade sonora, performance e experiência do público." data-en="Sound operation f[...]
+                  <p class="text-sm text-gray-900" data-pt="Operação de som em shows e espetáculos, com foco em qualidade sonora, performance e experiência do público." data-en="Sound operation for shows and performances, focusing on sound quality, performance, and audience experience.">Operação de som em shows e espetáculos, com foco em qualidade sonora, performance e experiência do público.</p>
                 </article>
 
                 <article>
                   <h3 class="font-semibold text-base mb-1" data-pt="Músico e Compositor Independente" data-en="Independent Musician and Composer">Músico e Compositor Independente</h3>
                   <p class="text-sm text-gray-600 mb-3" data-pt="2005 – presente" data-en="2005 – present">2005 – presente</p>
-                  <p class="text-sm text-gray-900" data-pt="Mais de 20 anos de experiência como músico, compositor e colaborador em projetos autorais e coletivos. Vivência com diferentes estilos e [...]
+                  <p class="text-sm text-gray-900" data-pt="Mais de 20 anos de experiência como músico, compositor e colaborador em projetos autorais e coletivos. Vivência com diferentes estilos e culturas musicais." data-en="Over 20 years of experience as musician, composer, and collaborator in original and collective projects. Experience with different styles and musical cultures.">Mais de 20 anos de experiência como músico, compositor e colaborador em projetos autorais e coletivos. Vivência com diferentes estilos e culturas musicais.</p>
                 </article>
               </div>
             </section>
@@ -351,9 +322,9 @@
               <h2 class="section-title" data-pt="Formação Acadêmica" data-en="Academic Background">Formação Acadêmica</h2>
               <div class="space-y-2 text-sm text-gray-900">
                 <p class="bullet-point" data-pt="Mestrado em Música — UDESC (2019–2021)" data-en="Master's in Music — UDESC (2019–2021)">Mestrado em Música — UDESC (2019–2021)</p>
-                <p class="bullet-point" data-pt="Pós-Graduação em Produção Cinematográfica — SENAC (2015–2017)" data-en="Postgraduate in Cinematographic Production — SENAC (2015–2017)">P[...]
+                <p class="bullet-point" data-pt="Pós-Graduação em Produção Cinematográfica — SENAC (2015–2017)" data-en="Postgraduate in Cinematographic Production — SENAC (2015–2017)">Pós-Graduação em Produção Cinematográfica — SENAC (2015–2017)</p>
                 <p class="bullet-point" data-pt="Produção de Mídia — FAAM (2013–2015)" data-en="Media Production — FAAM (2013–2015)">Produção de Mídia — FAAM (2013–2015)</p>
-                <p class="bullet-point" data-pt="Produção Musical — Anhembi Morumbi (2012–2014)" data-en="Music Production — Anhembi Morumbi (2012–2014)">Produção Musical — Anhembi Morum[...]
+                <p class="bullet-point" data-pt="Produção Musical — Anhembi Morumbi (2012–2014)" data-en="Music Production — Anhembi Morumbi (2012–2014)">Produção Musical — Anhembi Morumbi (2012–2014)</p>
                 <p class="bullet-point" data-pt="Engenharia de Áudio — IAV (2008–2011)" data-en="Audio Engineering — IAV (2008–2011)">Engenharia de Áudio — IAV (2008–2011)</p>
               </div>
             </section>
@@ -363,7 +334,7 @@
             <!-- Visão e Propósito -->
             <section class="mb-6">
               <h2 class="section-title" data-pt="Visão e Propósito" data-en="Vision and Purpose">Visão e Propósito</h2>
-              <p class="text-sm leading-relaxed text-gray-900" data-pt="Minha trajetória é guiada pela combinação entre sensibilidade criativa e estratégia. Acredito em projetos que unem autentic[...]
+              <p class="text-sm leading-relaxed text-gray-900" data-pt="Minha trajetória é guiada pela combinação entre sensibilidade criativa e estratégia. Acredito em projetos que unem autenticidade, colaboração e propósito — transformando experiências artísticas em conexões reais e duradouras." data-en="My journey is guided by the combination of creative sensitivity and strategy. I believe in projects that unite authenticity, collaboration, and purpose — transforming artistic experiences into real and lasting connections.">Minha trajetória é guiada pela combinação entre sensibilidade criativa e estratégia. Acredito em projetos que unem autenticidade, colaboração e propósito — transformando experiências artísticas em conexões reais e duradouras.</p>
             </section>
           </main>
         </div>
